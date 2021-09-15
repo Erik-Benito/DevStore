@@ -45,7 +45,7 @@ export default function Home(){
         
         if(idalterado > 0){
             const r = await api.alterar(idalterado, nome, categoria, estoque, avaliacao, image, desc, precoDe, precoPor  );
-            if(!r.erro){toast.success('alterado'); limpar(); listarProdutos()} else {toast.error(r.erro)}
+            if(!r.erro){toast.success('alterado'); limpar(); listarProdutos()} else {toast.error(r.erro)};
         } else {
             const r = await api.cadastrarProduto( nome, categoria, estoque, avaliacao, image, desc, precoDe, precoPor );
             if(!r.erro){toast.success('Cadastrado'); limpar(); listarProdutos()} else {toast.error(r.erro)}

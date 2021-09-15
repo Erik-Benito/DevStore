@@ -27,7 +27,9 @@ app.post('/produto', async(req,resp)=>{
         if( !Number(precoDe) > 0){return resp.send({erro: 'O campo Preço de: deve ser preenchido com numeros acima de 0'})};
         if( !Number(precoPor) > 0){return resp.send({erro: 'O campo Preço Por: deve ser preenchido com numeros acima de 0'})};
         if( !Number(avaliacao) > 0){return resp.send({erro: 'O campo avaliação deve ser preenchido com numeros'})};
-
+        if( !Number(estoque) > 0){return resp.send({erro: 'O campo estoque: deve ser preenchido com numeros acima de 0'})};
+        if(  Number.isInteger(estoque) == false){ return resp.send({erro: 'O numero do estoque tem que ser inteiro'})};
+       
         let  rep = await db.tb_produto.findOne({where: {nm_produto: produto}});
         if(  rep != null ){return resp.send({erro: 'Produto já cadastrado'})};
 
@@ -67,8 +69,10 @@ app.put('/produto/:id', async(req, resp) => {
 
         if( !Number(precoDe) > 0){return resp.send({erro: 'O campo Preço de: deve ser preenchido com numeros acima de 0'})};
         if( !Number(precoPor) > 0){return resp.send({erro: 'O campo Preço Por: deve ser preenchido com numeros acima de 0'})};
+        if( !Number(estoque) > 0){return resp.send({erro: 'O campo estoque: deve ser preenchido com numeros acima de 0'})};
         if( !Number(avaliacao) > 0){return resp.send({erro: 'O campo avaliação deve ser preenchido com numeros'})};
-
+        if( true != Number.isInteger(estoque)){ return resp.send({erro: 'O numero do estoque tem que ser inteiro'})};
+        
         let d = {
             nm_produto: produto,
             ds_categoria: categoria,
