@@ -62,7 +62,7 @@ export default function Home(){
     }
     const excluir = async(id) =>{
         confirmAlert({
-            title: 'Remover Aluno',
+            title: 'Remover Produto',
             message: `Tem certeza que deseja remover o produto ${id}`,
             buttons:[
                 {
@@ -71,6 +71,7 @@ export default function Home(){
                         const resp = await api.deletar(id);
                         toast.error('Produto removido');
                         listarProdutos();
+                        console.log(resp)
                     }
                 },
                 {label: 'Não'}
