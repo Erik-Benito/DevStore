@@ -68,10 +68,9 @@ export default function Home(){
                 {
                     label: 'Sim',
                     onClick: async () => {
-                        const resp = await api.deletar(id);
+                         await api.deletar(id);
                         toast.error('Produto removido');
                         listarProdutos();
-                        console.log(resp)
                     }
                 },
                 {label: 'Não'}

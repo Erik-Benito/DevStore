@@ -19,10 +19,10 @@ app.post('/produto', async(req,resp)=>{
     try{
         let {produto, categoria, precoDe, precoPor, avaliacao, descricao, estoque, img } = req.body;
         
-        if( produto == ''  ){return resp.send({erro: 'O campo produto não foi preenchido corretamente'})};
-        if( categoria == ''){return resp.send({erro: 'O campo categoria não foi preenchido corretamente'})};
-        if( descricao == ''){return resp.send({erro: 'O campo descrição não foi preenchido corretamente'})};
-        if( img == ''      ){return resp.send({erro: 'O campo imagem não foi preenchido corretamente'})};
+        if( produto === ''  ){return resp.send({erro: 'O campo produto não foi preenchido corretamente'})};
+        if( categoria === ''){return resp.send({erro: 'O campo categoria não foi preenchido corretamente'})};
+        if( descricao === ''){return resp.send({erro: 'O campo descrição não foi preenchido corretamente'})};
+        if( img === ''      ){return resp.send({erro: 'O campo imagem não foi preenchido corretamente'})};
 
         if( !Number(precoDe) > 0){return resp.send({erro: 'O campo Preço de: deve ser preenchido com numeros acima de 0'})};
         if( !Number(precoPor) > 0){return resp.send({erro: 'O campo Preço Por: deve ser preenchido com numeros acima de 0'})};
@@ -62,10 +62,10 @@ app.put('/produto/:id', async(req, resp) => {
         let { id } = req.params;
         let {produto, categoria, precoDe, precoPor, avaliacao, descricao, estoque, img } = req.body;
         
-        if( produto == ''  ){return resp.send({erro: 'O campo produto não foi preenchido corretamente'})};
-        if( categoria == ''){return resp.send({erro: 'O campo categoria não foi preenchido corretamente'})};
-        if( descricao == ''){return resp.send({erro: 'O campo descrição não foi preenchido corretamente'})};
-        if( img == ''      ){return resp.send({erro: 'O campo imagem não foi preenchido corretamente'})};
+        if( produto === ''  ){return resp.send({erro: 'O campo produto não foi preenchido corretamente'})};
+        if( categoria === ''){return resp.send({erro: 'O campo categoria não foi preenchido corretamente'})};
+        if( descricao === ''){return resp.send({erro: 'O campo descrição não foi preenchido corretamente'})};
+        if( img === ''      ){return resp.send({erro: 'O campo imagem não foi preenchido corretamente'})};
 
         if( !Number(precoDe) > 0){return resp.send({erro: 'O campo Preço de: deve ser preenchido com numeros acima de 0'})};
         if( !Number(precoPor) > 0){return resp.send({erro: 'O campo Preço Por: deve ser preenchido com numeros acima de 0'})};
